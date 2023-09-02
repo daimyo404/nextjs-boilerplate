@@ -1,0 +1,14 @@
+.spaceSizeSmall {
+  height: 5vh;
+  width: 100%;
+}
+
+.spaceSizeMidium {
+  height: 10vh;
+  width: 100%;
+}
+
+.spaceSizeLarge {
+  height: 20vh;
+  width: 100%;
+}
