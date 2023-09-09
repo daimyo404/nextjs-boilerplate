@@ -12,9 +12,14 @@ export default function Home() {
       <Spacer spaceSize="large"></Spacer>
       <Typography></Typography>
       <Spacer spaceSize="medium"></Spacer>
-      <Form />
-      <Form />
-      <Button label="Click me" buttonOnClick={() => console.log("Clicked")} />
+      <Form type={"mail"} id={"mail"} name={"mail"} placeholder={"hoge"} />
+      <Form type={"mail"} id={"mail"} name={"mail"} placeholder={"hoge"} />
+      <Button
+        color={"primary"}
+        label="Click me"
+        buttonOnClick={() => console.log("Clicked")}
+        size="medium"
+      />
     </div>
   );
 }

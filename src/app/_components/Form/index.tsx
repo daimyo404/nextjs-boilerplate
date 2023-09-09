@@ -1,19 +1,29 @@
 "use client";
 
+import { InputHTMLAttributes } from "react";
 import styles from "./styles.module.css";
 
-type ButtonProps = {
-  label: string;
-  buttonOnClick: () => void;
+type FormProps = {
+  type: string;
+  name: string;
+  id: string;
 };
 
-export default function Form() {
-  // const { label, buttonOnClick } = props;
+type Props = Omit<InputHTMLAttributes<HTMLInputElement>, keyof FormProps> &
+  FormProps;
+
+export default function Form(props: Props) {
+  const { type, name, id, ...optionalProps } = props;
   return (
     <form method={"post"}>
       <div>
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input
+          className={`${styles.input}`}
+          type={type}
+          name={name}
+          id={id}
+          {...optionalProps}
+        />
       </div>
     </form>
   );
