@@ -1,11 +1,14 @@
-.button {
-  background-color: #0070f3;
-  border: 0;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
+.smallParagraph {
   font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5;
-  padding: 0.5rem 1rem;
+  font-weight: 200;
+}
+
+.mediumParagraph {
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+
+.largeParagraph {
+  font-size: 2rem;
+  font-weight: 200;
 }
