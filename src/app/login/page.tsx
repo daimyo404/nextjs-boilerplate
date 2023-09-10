@@ -5,7 +5,6 @@ import Typography from "../_components/Typography";
 import TextField from "../_components/TextField";
 import styles from "./styles.module.css";
 import Spacer from "../_components/Spacer";
-import { useState } from "react";
 import useValidState from "../_hooks/useValidState";
 
 export default function Home() {
@@ -23,9 +22,9 @@ export default function Home() {
 
   return (
     <div className={`${styles.rootContainer}`}>
-      <Spacer spaceSize="large"></Spacer>
+      <Spacer size="large"></Spacer>
       <Typography size={"large"} text={"text"}></Typography>
-      <Spacer spaceSize="large"></Spacer>
+      <Spacer size="large"></Spacer>
       <div className={`${styles.container}`}>
         <div className={`${styles.container2}`}>
           <div className={`${styles.container5}`}>

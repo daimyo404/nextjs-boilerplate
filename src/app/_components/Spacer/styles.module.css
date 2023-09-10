@@ -1,14 +1,14 @@
-.spaceSizeSmall {
+.smallSpacer {
   height: 5vh;
   width: 100%;
 }
 
-.spaceSizeMidium {
+.mediumSpacer {
   height: 10vh;
   width: 100%;
 }
 
-.spaceSizeLarge {
+.largeSpacer {
   height: 20vh;
   width: 100%;
 }

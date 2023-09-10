@@ -1,28 +1,32 @@
 import styles from "./styles.module.css";
 
-const className = (spaceSize: string) => {
-  switch (spaceSize) {
+type SizeType = "small" | "medium" | "large";
+
+const sizeStyle = (size: SizeType) => {
+  switch (size) {
     case "small":
-      return `${styles.spaceSizeSmall}`;
+      return styles.smallSpacer;
     case "medium":
-      return `${styles.spaceSizeMidium}`;
+      return styles.mediumSpacer;
     case "large":
-      return `${styles.spaceSizeLarge}`;
+      return styles.largeSpacer;
     default:
-      return `${styles.spaceSizeSmall}`;
+      return styles.mediumSpacer;
   }
 };
 
-type spacerProps = {
+type Props = {
   /**
-   * @description Spaceのサイズ
-   * @example small, medium, large
+   * @description Spacerコンポーネント
+   * @param {SizeType} size
    */
-  spaceSize: string;
+  size: SizeType;
 };
 
-export default function Spacer(props: spacerProps) {
-  const { spaceSize } = props;
+const Spacer = (props: Props) => {
+  const { size } = props;
 
-  return <div className={className(spaceSize)}></div>;
-}
+  return <div className={sizeStyle(size)}></div>;
+};
+
+export default Spacer;
