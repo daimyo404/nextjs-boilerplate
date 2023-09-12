@@ -1,11 +1,11 @@
 "use client";
 
-import Button from "../_components/Button";
+import Button from "../_components/clientComponents/Button";
 import Typography from "../_components/Typography";
 import TextField from "../_components/TextField";
 import styles from "./styles.module.css";
 import Spacer from "../_components/Spacer";
-import useValidState from "../_hooks/useValidState";
+import useValidState from "../_hooks/useValidAndState";
 
 export default function Home() {
   //メールアドレス
