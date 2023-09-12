@@ -16,13 +16,13 @@ const sizeStyle = (size: SizeType) => {
 };
 
 type Props = {
-  /**
-   * @description Spacerコンポーネント
-   * @param {SizeType} size
-   */
   size: SizeType;
 };
 
+/**
+ * @description Spacerコンポーネント
+ * @param {SizeType} size
+ */
 const Spacer = (props: Props) => {
   const { size } = props;
 
