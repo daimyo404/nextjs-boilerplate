@@ -6,6 +6,8 @@ import TextField from "../_components/clientComponents/TextField";
 import styles from "./styles.module.css";
 import Spacer from "../_components/Spacer";
 import useValidAndState from "../_hooks/useValidAndState";
+import router from "next/router";
+import Link from "next/link";
 
 const Home = () => {
   // mail setting
@@ -48,19 +50,25 @@ const Home = () => {
     setTelState(event.target.value);
   };
 
+  //button action
+  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // e.preventDefault();
+    // router.push("/complete");
+  };
+
   return (
-    <div className={`${styles.rootContainer}`}>
-      <Spacer size="large"></Spacer>
-      <Typography size={"large"} text={"text"}></Typography>
-      <Spacer size="large"></Spacer>
-      <div className={`${styles.container}`}>
-        <div className={`${styles.container2}`}>
-          <div className={`${styles.container5}`}>
+    <div className={`${styles.rootWrapper}`}>
+      <Spacer size="medium"></Spacer>
+      <Typography size={"large"} text={"フォームサンプル"}></Typography>
+      <Spacer size="medium"></Spacer>
+      <div className={`${styles.horizontalWrapper}`}>
+        <div className={`${styles.labelFrameWrapper}`}>
+          <div className={`${styles.adjustmentLabelWrapper}`}>
             <Typography size={"medium"} text={"メール"}></Typography>
           </div>
         </div>
-        <div className={`${styles.container3}`}>
-          <div className={`${styles.container4}`}>
+        <div className={`${styles.textfieldFrameWrapper}`}>
+          <div className={`${styles.adjustmentTextfieldWrapper}`}>
             <TextField
               type={"mail"}
               id={"mail"}
@@ -72,14 +80,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.container}`}>
-        <div className={`${styles.container2}`}>
-          <div className={`${styles.container5}`}>
+      <div className={`${styles.horizontalWrapper}`}>
+        <div className={`${styles.labelFrameWrapper}`}>
+          <div className={`${styles.adjustmentLabelWrapper}`}>
             <Typography size={"medium"} text={"パスワード"}></Typography>
           </div>
         </div>
-        <div className={`${styles.container3}`}>
-          <div className={`${styles.container4}`}>
+        <div className={`${styles.textfieldFrameWrapper}`}>
+          <div className={`${styles.adjustmentTextfieldWrapper}`}>
             <TextField
               type={"password"}
               id={"password"}
@@ -91,14 +99,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.container}`}>
-        <div className={`${styles.container2}`}>
-          <div className={`${styles.container5}`}>
+      <div className={`${styles.horizontalWrapper}`}>
+        <div className={`${styles.labelFrameWrapper}`}>
+          <div className={`${styles.adjustmentLabelWrapper}`}>
             <Typography size={"medium"} text={"名前"}></Typography>
           </div>
         </div>
-        <div className={`${styles.container3}`}>
-          <div className={`${styles.container4}`}>
+        <div className={`${styles.textfieldFrameWrapper}`}>
+          <div className={`${styles.adjustmentTextfieldWrapper}`}>
             <TextField
               type={"text"}
               id={"text"}
@@ -110,14 +118,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.container}`}>
-        <div className={`${styles.container2}`}>
-          <div className={`${styles.container5}`}>
+      <div className={`${styles.horizontalWrapper}`}>
+        <div className={`${styles.labelFrameWrapper}`}>
+          <div className={`${styles.adjustmentLabelWrapper}`}>
             <Typography size={"medium"} text={"電話番号"}></Typography>
           </div>
         </div>
-        <div className={`${styles.container3}`}>
-          <div className={`${styles.container4}`}>
+        <div className={`${styles.textfieldFrameWrapper}`}>
+          <div className={`${styles.adjustmentTextfieldWrapper}`}>
             <TextField
               type={"tel"}
               id={"tel"}
@@ -129,12 +137,15 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Button
-        variant={"primary"}
-        label="Click me"
-        handleOnClick={() => console.log("Clicked")}
-        size="medium"
-      />
+      <Spacer size="medium"></Spacer>
+      <Link href={"/complete"}>
+        <Button
+          variant={"primary"}
+          label="Click me"
+          handleOnClick={handleOnClick}
+          size="medium"
+        />
+      </Link>
     </div>
   );
 };

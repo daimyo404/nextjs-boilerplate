@@ -31,7 +31,7 @@ const sizeStyle = (size: SizeType) => {
 };
 
 type ButtonProps = {
-  handleOnClick: () => void;
+  handleOnClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   label: string;
   variant: VariantType;
   size: SizeType;
