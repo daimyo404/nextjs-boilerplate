@@ -8,6 +8,7 @@ import Spacer from "../_components/Spacer";
 import useValidAndState from "../_hooks/useValidAndState";
 import router from "next/router";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const Home = () => {
   // mail setting
@@ -57,96 +58,98 @@ const Home = () => {
   };
 
   return (
-    <div className={`${styles.rootWrapper}`}>
-      <Spacer size="medium"></Spacer>
-      <Typography size={"large"} text={"フォームサンプル"}></Typography>
-      <Spacer size="medium"></Spacer>
-      <div className={`${styles.horizontalWrapper}`}>
-        <div className={`${styles.labelFrameWrapper}`}>
-          <div className={`${styles.adjustmentLabelWrapper}`}>
-            <Typography size={"medium"} text={"メール"}></Typography>
+    <Suspense fallback={<p>Loading feed...</p>}>
+      <div className={`${styles.rootWrapper}`}>
+        <Spacer size="medium"></Spacer>
+        <Typography size={"large"} text={"フォームサンプル"}></Typography>
+        <Spacer size="medium"></Spacer>
+        <div className={`${styles.horizontalWrapper}`}>
+          <div className={`${styles.labelFrameWrapper}`}>
+            <div className={`${styles.adjustmentLabelWrapper}`}>
+              <Typography size={"medium"} text={"メール"}></Typography>
+            </div>
+          </div>
+          <div className={`${styles.textfieldFrameWrapper}`}>
+            <div className={`${styles.adjustmentTextfieldWrapper}`}>
+              <TextField
+                type={"mail"}
+                id={"mail"}
+                name={"mail"}
+                placeholder={"example@gmail.com"}
+                handleOnBlur={handleMailOnBlur}
+                isValid={isMailValid}
+              />
+            </div>
           </div>
         </div>
-        <div className={`${styles.textfieldFrameWrapper}`}>
-          <div className={`${styles.adjustmentTextfieldWrapper}`}>
-            <TextField
-              type={"mail"}
-              id={"mail"}
-              name={"mail"}
-              placeholder={"example@gmail.com"}
-              handleOnBlur={handleMailOnBlur}
-              isValid={isMailValid}
-            />
+        <div className={`${styles.horizontalWrapper}`}>
+          <div className={`${styles.labelFrameWrapper}`}>
+            <div className={`${styles.adjustmentLabelWrapper}`}>
+              <Typography size={"medium"} text={"パスワード"}></Typography>
+            </div>
+          </div>
+          <div className={`${styles.textfieldFrameWrapper}`}>
+            <div className={`${styles.adjustmentTextfieldWrapper}`}>
+              <TextField
+                type={"password"}
+                id={"password"}
+                name={"password"}
+                placeholder={"password"}
+                handleOnBlur={handlePasswordOnBlur}
+                isValid={isPasswordValid}
+              />
+            </div>
           </div>
         </div>
+        <div className={`${styles.horizontalWrapper}`}>
+          <div className={`${styles.labelFrameWrapper}`}>
+            <div className={`${styles.adjustmentLabelWrapper}`}>
+              <Typography size={"medium"} text={"名前"}></Typography>
+            </div>
+          </div>
+          <div className={`${styles.textfieldFrameWrapper}`}>
+            <div className={`${styles.adjustmentTextfieldWrapper}`}>
+              <TextField
+                type={"text"}
+                id={"text"}
+                name={"text"}
+                placeholder={"お名前　太郎"}
+                handleOnBlur={handleNameOnBlur}
+                isValid={isNameValid}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={`${styles.horizontalWrapper}`}>
+          <div className={`${styles.labelFrameWrapper}`}>
+            <div className={`${styles.adjustmentLabelWrapper}`}>
+              <Typography size={"medium"} text={"電話番号"}></Typography>
+            </div>
+          </div>
+          <div className={`${styles.textfieldFrameWrapper}`}>
+            <div className={`${styles.adjustmentTextfieldWrapper}`}>
+              <TextField
+                type={"tel"}
+                id={"tel"}
+                name={"tel"}
+                placeholder={"hoge"}
+                handleOnBlur={handleTelOnBlur}
+                isValid={isTelValid}
+              />
+            </div>
+          </div>
+        </div>
+        <Spacer size="medium"></Spacer>
+        <Link href={"/complete"}>
+          <Button
+            variant={"primary"}
+            label="Click me"
+            handleOnClick={handleOnClick}
+            size="medium"
+          />
+        </Link>
       </div>
-      <div className={`${styles.horizontalWrapper}`}>
-        <div className={`${styles.labelFrameWrapper}`}>
-          <div className={`${styles.adjustmentLabelWrapper}`}>
-            <Typography size={"medium"} text={"パスワード"}></Typography>
-          </div>
-        </div>
-        <div className={`${styles.textfieldFrameWrapper}`}>
-          <div className={`${styles.adjustmentTextfieldWrapper}`}>
-            <TextField
-              type={"password"}
-              id={"password"}
-              name={"password"}
-              placeholder={"password"}
-              handleOnBlur={handlePasswordOnBlur}
-              isValid={isPasswordValid}
-            />
-          </div>
-        </div>
-      </div>
-      <div className={`${styles.horizontalWrapper}`}>
-        <div className={`${styles.labelFrameWrapper}`}>
-          <div className={`${styles.adjustmentLabelWrapper}`}>
-            <Typography size={"medium"} text={"名前"}></Typography>
-          </div>
-        </div>
-        <div className={`${styles.textfieldFrameWrapper}`}>
-          <div className={`${styles.adjustmentTextfieldWrapper}`}>
-            <TextField
-              type={"text"}
-              id={"text"}
-              name={"text"}
-              placeholder={"お名前　太郎"}
-              handleOnBlur={handleNameOnBlur}
-              isValid={isNameValid}
-            />
-          </div>
-        </div>
-      </div>
-      <div className={`${styles.horizontalWrapper}`}>
-        <div className={`${styles.labelFrameWrapper}`}>
-          <div className={`${styles.adjustmentLabelWrapper}`}>
-            <Typography size={"medium"} text={"電話番号"}></Typography>
-          </div>
-        </div>
-        <div className={`${styles.textfieldFrameWrapper}`}>
-          <div className={`${styles.adjustmentTextfieldWrapper}`}>
-            <TextField
-              type={"tel"}
-              id={"tel"}
-              name={"tel"}
-              placeholder={"hoge"}
-              handleOnBlur={handleTelOnBlur}
-              isValid={isTelValid}
-            />
-          </div>
-        </div>
-      </div>
-      <Spacer size="medium"></Spacer>
-      <Link href={"/complete"}>
-        <Button
-          variant={"primary"}
-          label="Click me"
-          handleOnClick={handleOnClick}
-          size="medium"
-        />
-      </Link>
-    </div>
+    </Suspense>
   );
 };
 

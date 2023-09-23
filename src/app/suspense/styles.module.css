@@ -1,0 +1,40 @@
+.rootWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontalWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.labelFrameWrapper {
+  width: 16vw;
+  height: 12vh;
+  border: 2px solid #8db4d3;
+  background-color: #f0f5f9;
+}
+
+.textfieldFrameWrapper {
+  width: 50vw;
+  height: 12vh;
+  border: 2px solid #8db4d3;
+  border-left: none;
+  background-color: #f0f5f9;
+  justify-content: center;
+  display: flex;
+}
+
+.adjustmentTextfieldWrapper {
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.adjustmentLabelWrapper {
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}

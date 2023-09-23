@@ -1,3 +1,8 @@
+## サンプルのパス
+
+- /form
+- /login
+
 ## CSS の className 命名規則
 
 - jsx で扱いやすいのでキャメルケース

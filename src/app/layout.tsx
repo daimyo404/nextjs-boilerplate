@@ -24,12 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={notoSansJpFont.className}>
-        <p>これはroot</p>
-        {children}
-        {/* {children} */}
-      </body>
+    <html lang="ja">
+      <body className={notoSansJpFont.className}>{children}</body>
     </html>
   );
 }
