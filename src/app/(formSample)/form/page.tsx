@@ -1,11 +1,11 @@
 "use client";
 
-import Button from "../_components/clientComponents/Button";
-import Typography from "../_components/Typography";
-import TextField from "../_components/clientComponents/TextField";
+import Button from "../../_components/clientComponents/Button";
+import Typography from "../../_components/Typography";
+import TextField from "../../_components/clientComponents/TextField";
 import styles from "./styles.module.css";
-import Spacer from "../_components/Spacer";
-import useValidAndState from "../_hooks/useValidAndState";
+import Spacer from "../../_components/Spacer";
+import useValidAndState from "../../_hooks/useValidAndState";
 import router from "next/router";
 import Link from "next/link";
 import { Suspense } from "react";
