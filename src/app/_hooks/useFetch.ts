@@ -11,8 +11,14 @@ const useFetch = (url: string, method: string, headers: any, body: any) => {
 
   useEffect(() => {
     const abortController = new AbortController();
+    const options: Pick<AxiosRequestConfig, "url" | "method" | "signal"> = {
+      url: url,
+      method: "GET",
+      signal: abortController.signal,
+    };
+
     async () => {
-      const fetchData = await axios(url, { signal: abortController.signal });
+      const fetchData = await axios(options);
       setData(fetchData.data);
     };
     return () => {
